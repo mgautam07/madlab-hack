@@ -1,70 +1,33 @@
-#include<iostream>
-#include<list>
+#include <iostream>
+#include <vector>
 using namespace std;
-
 
 /*
 Task:
-1. implement a linked list and print it
+1. 
 */
 
-int main(){
-    list<int> linkedList;
-    for (int i = 0; i < 5; i++)
-    {
-        int element;
-        cout << "Enter an element to add to the Linked List : ";
-        cin >> element;
-        linkedList.push_back(element);
-    }
-    cout << "The linked list is :- ";
-    for (auto &it : linkedList)
-    {
-        cout << it << ' ';
-    }
-
-
-
-
-class Node {
-public:
-    int data;
-    Node* next;
-};
- 
-// This function prints contents of linked list
-// starting from the given node
-void printList(Node* n)
+int linear_search(vector<int> arr, int k)
 {
-    while (n != NULL) {
-        cout << n->data << " ";
-        n = n->next;
+    int pos = 0;
+    for (auto &it : arr)
+    {
+        if (it == k)
+        {
+            return pos;
+        }
+        pos++;
     }
 }
- 
-// Driver code
 int main()
 {
-    Node* head = NULL;
-    Node* second = NULL;
-    Node* third = NULL;
- 
-    // allocate 3 nodes in the heap
-    head = new Node();
-    second = new Node();
-    third = new Node();
- 
-    head->data = 1; // assign data in first node
-    head->next = second; // Link first node with second
- 
-    second->data = 2; // assign data to second node
-    second->next = third;
- 
-    third->data = 3; // assign data to third node
-    third->next = NULL;
- 
-    printList(head);
- 
+    vector<int> arr;
+    arr.push_back(1);
+    arr.push_back(3);
+    arr.push_back(2);
+    arr.push_back(5);
+
+    cout << linear_search(arr, 3) << endl;
 
     return 0;
 }
