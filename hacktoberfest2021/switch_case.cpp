@@ -21,6 +21,9 @@ int main(){
     case 3:
         cout << "You entered 3";
         break;
+    case 4:
+        cout << "You entered 4";
+        break;
     default:
         break;
     }
